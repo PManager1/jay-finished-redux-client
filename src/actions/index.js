@@ -24,7 +24,7 @@ export function signinUser({ email, password }) {
 
       localStorage.setItem('token', response.data.token);
 
-      browserHistory.push('/feature');
+      // browserHistory.push('/feature');
 
     })
     //   // If request is good...
