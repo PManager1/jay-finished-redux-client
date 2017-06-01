@@ -7,7 +7,7 @@ import { browserHistory } from 'react-router';
 //   FETCH_MESSAGE
 // } from './types';
 
-import { AUTH_USER, AUTH_ERROR } from './types'
+import { AUTH_USER, AUTH_ERROR, UNAUTH_USER } from './types'
 const ROOT_URL = 'http://localhost:3090';
 
 export function signinUser({ email, password }) {
@@ -39,6 +39,18 @@ export function signinUser({ email, password }) {
 
   }
 }
+
+
+
+
+export function signoutUser() {
+  console.log(' signout User called insidt he  actions/index');
+  localStorage.removeItem('token');
+
+  return { type: UNAUTH_USER }
+}
+
+
 
 
 export function authError(error) {
